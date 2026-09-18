@@ -10,18 +10,11 @@
 
 ---
 
-## Screenshots
+## Screenshots & Preview
 
-[#screenshots](#screenshots)
-
-<!--
-  Drop your PNGs into a /docs (or /screenshots) folder in the repo root and
-  point these paths at them, e.g. docs/dashboard-overview.png
--->
-
-| Admin Command Center | Aegis Assistant |
-| --- | --- |
-| ![Organization overview dashboard showing total users, working now, teams, and operational health](docs/dashboard-overview.png) | ![In-app Aegis Assistant answering live attendance and timesheet questions](docs/aegis-assistant.png) |
+| Command Center Dashboard | Login & Authentication |
+| :---: | :---: |
+| ![Cohere Aegis Command Center Dashboard](docs/images/cohere-aegis-dashboard.png) | ![Cohere Aegis Login Interface](docs/images/cohere-aegis-login.png) |
 
 ---
 
