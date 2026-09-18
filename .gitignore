@@ -1,0 +1,62 @@
+# Dependencies
+node_modules/
+
+# Production build (upload dist/ to the host; do not commit it)
+dist/
+dist-ssr/
+build/
+*.zip
+
+# Local env and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Project copies of live config (use the .example files)
+extension/config.js
+public/supabase-proxy.php
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Test / coverage
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# TypeScript / Vite caches
+*.tsbuildinfo
+.cache/
+.vite/
+.turbo/
+
+# Supabase CLI
+supabase/.temp/
+supabase/.branches/
+
+# Editors
+.cursor/
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.sw?
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini

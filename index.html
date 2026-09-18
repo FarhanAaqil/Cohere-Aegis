@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("lc-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.classList.remove("light", "dark");
+            document.documentElement.classList.add(t);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TODO: Set the document title to the name of your application -->
+    <title>Lemon Host Monitor</title>
+    <meta name="description" content="Lemon Host Monitor - Employee Time & Attendance Tracking" />
+    <meta name="author" content="Lovable" />
+
+    <meta property="og:title" content="Lemon Host Monitor" />
+    <meta property="og:description" content="Lemon Host Monitor - Employee Time & Attendance Tracking" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
+
+  <body>
+    <div id="root">Loading Lemon Host Monitor...</div>
+    <noscript>Enable JavaScript to use Lemon Host Monitor.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
