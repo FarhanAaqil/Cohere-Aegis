@@ -2,7 +2,7 @@
 // Copy this file to supabase-proxy.php and set YOUR project URL.
 
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: authorization, x-lc-authorization, content-type, apikey, x-client-info");
+header("Access-Control-Allow-Headers: authorization, x-aegis-authorization, x-lc-authorization, content-type, apikey, x-client-info");
 header("Access-Control-Allow-Methods: *");
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Pragma: no-cache");
@@ -46,9 +46,11 @@ foreach ($incomingHeaders as $name => $value) {
 
 $authorization =
     $headersByName['authorization'] ??
+    $headersByName['x-aegis-authorization'] ??
     $headersByName['x-lc-authorization'] ??
     ($_SERVER['HTTP_AUTHORIZATION'] ?? null) ??
     ($_SERVER['REDIRECT_HTTP_AUTHORIZATION'] ?? null) ??
+    ($_SERVER['HTTP_X_AEGIS_AUTHORIZATION'] ?? null) ??
     ($_SERVER['HTTP_X_LC_AUTHORIZATION'] ?? null);
 
 $headers = [];

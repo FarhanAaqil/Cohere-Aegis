@@ -4,7 +4,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import companyLogo from "@/assets/lemoncode-logo.png";
+import companyLogo from "@/assets/cohere-aegis-logo.png";
 import { Lock, Mail, Shield, BarChart3, Users, ArrowRight } from "lucide-react";
 
 const LoginPage = () => {
@@ -57,11 +57,11 @@ const LoginPage = () => {
         <div className="relative z-10 text-center px-16 max-w-xl">
           <div className="mb-10 flex justify-center">
             <div className="rounded-2xl bg-white/[0.08] backdrop-blur-md p-10 border border-white/[0.08] shadow-2xl">
-              <img src={companyLogo} alt="Lemon Host Monitor" className="h-44 w-auto object-contain brightness-0 invert" />
+              <img src={companyLogo} alt="Cohere Aegis" className="h-44 w-auto object-contain brightness-0 invert" />
             </div>
           </div>
           <h1 className="text-4xl font-display font-extrabold text-white tracking-tight mb-3 leading-tight">
-            Lemon Host Monitor
+            Cohere Aegis
           </h1>
           <p className="text-white/50 text-sm leading-relaxed max-w-sm mx-auto">
             Enterprise workforce management for time, attendance, and monitoring in one platform.
@@ -99,10 +99,10 @@ const LoginPage = () => {
           {/* Mobile logo */}
           <div className="lg:hidden flex flex-col items-center mb-10">
             <div className="rounded-2xl bg-muted/50 p-8 border border-border/60">
-              <img src={companyLogo} alt="Lemon Host Monitor" className="h-36 w-auto object-contain" />
+              <img src={companyLogo} alt="Cohere Aegis" className="h-36 w-auto object-contain" />
             </div>
             <h1 className="text-2xl font-display font-extrabold tracking-tight text-foreground mt-4">
-              Lemon Host Monitor
+              Cohere Aegis
             </h1>
           </div>
 
@@ -111,7 +111,7 @@ const LoginPage = () => {
               Welcome back
             </h2>
             <p className="text-sm text-muted-foreground mt-2">
-              Sign in to your Lemon Host Monitor account
+              Sign in to your Cohere Aegis account
             </p>
           </div>
 
@@ -134,7 +134,7 @@ const LoginPage = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@company.com"
+                  placeholder="you@example.com"
                   required
                   className="input-premium pl-10"
                 />

@@ -528,7 +528,7 @@ function AdminDashboard() {
             Admin Command Center
           </Badge>
           <h1 className="page-hero-title">Organization Overview</h1>
-          <p className="page-hero-subtitle">Monitor active work, teams, users, corrections, and operational signals across Lemon Host Monitor.</p>
+          <p className="page-hero-subtitle">Monitor active work, teams, users, corrections, and operational signals across Cohere Aegis.</p>
         </div>
         <Button variant="outline" className="h-11 gap-2 rounded-lg" onClick={() => navigate("/admin")}>
           Admin tools <ShieldCheck className="h-4 w-4" />

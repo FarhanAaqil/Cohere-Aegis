@@ -231,7 +231,7 @@ async function answerStatus(): Promise<string> {
 
 function helpText(): string {
   return [
-    "I use live Lemon Host Monitor data. You can ask:",
+    "I use live Cohere Aegis data. You can ask:",
     "• Who is working now?",
     "• Today's attendance",
     "• Explain my timesheet / hours this week",
@@ -295,6 +295,6 @@ export async function answerAssistantQuery(input: string, role?: string | null):
     return `${helpText()}\n\nI didn’t match that to a live report. Try a quick action above.`;
   } catch (err) {
     const msg = err instanceof Error ? err.message : "Request failed";
-    return `I couldn’t load that from Lemon Host Monitor: ${msg}`;
+    return `I couldn’t load that from Cohere Aegis: ${msg}`;
   }
 }

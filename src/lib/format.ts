@@ -1,10 +1,10 @@
 /**
- * Shared formatting helpers used across the Lemon Host Monitor frontend.
+ * Shared formatting helpers used across the Cohere Aegis frontend.
  */
 
 /**
  * Converts a string to Title Case.
- * e.g. "fareeha zareen" -> "Fareeha Zareen"
+ * e.g. "jane doe" -> "Jane Doe"
  */
 export function toTitleCase(str: string | null | undefined): string {
   if (!str) return "";

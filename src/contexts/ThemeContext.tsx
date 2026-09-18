@@ -2,7 +2,8 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 
 export type Theme = "dark" | "light";
 
-const STORAGE_KEY = "lc-theme";
+const STORAGE_KEY = "cohere-aegis-theme";
+const LEGACY_STORAGE_KEY = "lc-theme";
 
 interface ThemeContextType {
   theme: Theme;
@@ -21,7 +22,7 @@ function applyThemeClass(theme: Theme) {
 
 function readStoredTheme(): Theme {
   try {
-    const stored = localStorage.getItem(STORAGE_KEY);
+    const stored = localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY);
     if (stored === "light" || stored === "dark") return stored;
   } catch {
     /* ignore */

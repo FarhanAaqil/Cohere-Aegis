@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const badge = document.getElementById('status-badge');
       const title = document.getElementById('status-title');
       if (status.clockedIn) {
-        if (title) title.textContent = 'Lemon Host Monitor Active';
+        if (title) title.textContent = 'Cohere Aegis Active';
         if (badge) {
           badge.textContent = '● Monitoring';
           badge.style.backgroundColor = '#dcfce7';
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             : 'No screenshot yet'
         }.${status.lastScreenshotError ? ' Error: ' + status.lastScreenshotError : ''}`;
       } else {
-        if (title) title.textContent = 'Lemon Host Monitor';
+        if (title) title.textContent = 'Cohere Aegis';
         if (badge) {
           badge.textContent = 'Idle';
           badge.style.backgroundColor = '#f1f5f9';

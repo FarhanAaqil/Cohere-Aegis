@@ -14,7 +14,7 @@ import {
   Users,
 } from "lucide-react";
 
-const EXTENSION_DOWNLOAD_URL = "/downloads/lemon-host-monitor-extension.zip";
+const EXTENSION_DOWNLOAD_URL = "/downloads/cohere-aegis-extension.zip";
 
 const employeeSteps = [
   "Sign in with the account created by your administrator.",
@@ -35,7 +35,7 @@ const extensionSteps = [
   "Extract the ZIP file to a local folder.",
   "Open chrome://extensions and enable Developer mode.",
   "Choose Load unpacked and select the extracted extension folder.",
-  "Sign in to Lemon Host Monitor, then clock in to start tracking.",
+  "Sign in to Cohere Aegis, then clock in to start tracking.",
 ];
 
 export default function UserManualPage() {
@@ -48,7 +48,7 @@ export default function UserManualPage() {
           </Badge>
           <h1 className="page-heading flex items-center gap-2.5">
             <BookOpen className="h-7 w-7 text-primary" />
-            Lemon Host Monitor
+            Cohere Aegis
           </h1>
           <p className="page-subheading">
             Operational guide for employees, managers, administrators, and Chrome extension setup.

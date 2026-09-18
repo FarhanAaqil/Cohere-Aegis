@@ -1,7 +1,8 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "cohere-aegis",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Cohere Aegis - Intelligent Workforce Operations, Attendance, and Monitoring Platform",
   "type": "module",
   "scripts": {
     "dev": "vite",

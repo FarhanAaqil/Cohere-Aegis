@@ -6,6 +6,7 @@ dist/
 dist-ssr/
 build/
 *.zip
+!public/downloads/*.zip
 
 # Local env and secrets
 .env

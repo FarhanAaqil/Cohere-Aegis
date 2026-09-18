@@ -1,7 +1,7 @@
-const LC_MONITOR_CONTENT_VERSION = 2;
+const AEGIS_CONTENT_VERSION = 3;
 
-if (window.__lcMonitorContentVersion !== LC_MONITOR_CONTENT_VERSION) {
-  window.__lcMonitorContentVersion = LC_MONITOR_CONTENT_VERSION;
+if (window.__aegisContentVersion !== AEGIS_CONTENT_VERSION) {
+  window.__aegisContentVersion = AEGIS_CONTENT_VERSION;
 
   function sendRuntimeMessage(message) {
     try {
@@ -20,6 +20,10 @@ if (window.__lcMonitorContentVersion !== LC_MONITOR_CONTENT_VERSION) {
 
   function pingPageForSession() {
     window.postMessage(
+      { source: "cohere-aegis-ext", type: "AEGIS_PING" },
+      window.location.origin,
+    );
+    window.postMessage(
       { source: "lc-monitor-ext", type: "LC_MONITOR_PING" },
       window.location.origin,
     );
@@ -33,15 +37,15 @@ if (window.__lcMonitorContentVersion !== LC_MONITOR_CONTENT_VERSION) {
     if (event.source !== window) return;
     if (event.origin !== window.location.origin) return;
     const data = event.data;
-    if (!data || data.source !== "lc-monitor") return;
+    if (!data || (data.source !== "cohere-aegis" && data.source !== "lc-monitor")) return;
 
-    const type = data.type === "LC_MONITOR_ACTIVATE" || data.type === "ACTIVATE_MONITORING"
+    const type = data.type === "AEGIS_ACTIVATE" || data.type === "LC_MONITOR_ACTIVATE" || data.type === "ACTIVATE_MONITORING"
       ? "SAVE_SESSION"
-      : data.type === "LC_MONITOR_DEACTIVATE"
+      : data.type === "AEGIS_DEACTIVATE" || data.type === "LC_MONITOR_DEACTIVATE"
         ? "DEACTIVATE_MONITORING"
-        : data.type === "LC_MONITOR_CLOCKED_IN"
+        : data.type === "AEGIS_CLOCKED_IN" || data.type === "LC_MONITOR_CLOCKED_IN"
           ? "CLOCKED_IN"
-          : data.type === "LC_MONITOR_CLOCKED_OUT"
+          : data.type === "AEGIS_CLOCKED_OUT" || data.type === "LC_MONITOR_CLOCKED_OUT"
             ? "CLOCKED_OUT"
             : data.type;
 

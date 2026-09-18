@@ -4,7 +4,7 @@ export async function jsonRequest(url: string, options?: RequestInit) {
   const token = getAccessToken();
   const proxyAuthHeaders =
     url.startsWith("/supabase-proxy.php") && token
-      ? { "X-LC-Authorization": `Bearer ${token}` }
+      ? { "X-Aegis-Authorization": `Bearer ${token}`, "X-LC-Authorization": `Bearer ${token}` }
       : {};
 
   const res = await fetch(url, {

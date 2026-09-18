@@ -20,7 +20,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
               <SidebarTrigger className="text-muted-foreground hover:text-foreground transition-colors" />
               <div className="h-4 w-px bg-border/60 hidden sm:block" />
               <div className="hidden sm:block">
-                <span className="text-sm font-semibold text-foreground">Lemon Host Monitor</span>
+                <span className="text-sm font-semibold text-foreground">Cohere Aegis</span>
                 <span className="ml-2 text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
                   Workforce Operations
                 </span>

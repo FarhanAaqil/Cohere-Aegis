@@ -2,7 +2,6 @@ import { getAccessToken, getStoredUser } from "@/lib/auth";
 
 const EXTENSION_IDS = [
   import.meta.env.VITE_EXTENSION_ID,
-  "knficjgnnobghcolkkhdljidamomnhec",
 ].filter((id): id is string => typeof id === "string" && id.length > 0);
 
 export interface ActivatePayload {
@@ -12,6 +11,11 @@ export interface ActivatePayload {
 
 function postToExtension(type: string, extra: Record<string, unknown> = {}) {
   try {
+    window.postMessage(
+      { source: "cohere-aegis", type, ...extra },
+      window.location.origin,
+    );
+    // Legacy source broadcast for backward compatibility
     window.postMessage(
       { source: "lc-monitor", type, ...extra },
       window.location.origin,
@@ -71,12 +75,15 @@ function replyToContentScriptPing() {
   saveExtensionSession({ token, user });
 }
 
-if (typeof window !== "undefined" && !(window as Window & { __lcMonitorPageHook?: boolean }).__lcMonitorPageHook) {
-  (window as Window & { __lcMonitorPageHook?: boolean }).__lcMonitorPageHook = true;
+if (typeof window !== "undefined" && !(window as Window & { __aegisPageHook?: boolean }).__aegisPageHook) {
+  (window as Window & { __aegisPageHook?: boolean }).__aegisPageHook = true;
   window.addEventListener("message", (event) => {
     if (event.source !== window) return;
     if (event.origin !== window.location.origin) return;
-    if (event.data?.source === "lc-monitor-ext" && event.data?.type === "LC_MONITOR_PING") {
+    if (
+      (event.data?.source === "cohere-aegis-ext" && (event.data?.type === "AEGIS_PING" || event.data?.type === "LC_MONITOR_PING")) ||
+      (event.data?.source === "lc-monitor-ext" && event.data?.type === "LC_MONITOR_PING")
+    ) {
       replyToContentScriptPing();
     }
   });

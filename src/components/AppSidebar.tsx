@@ -25,7 +25,7 @@ import {
   BookOpen,
 } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
-import companyLogo from "@/assets/lemoncode-logo.png";
+import companyLogo from "@/assets/cohere-aegis-logo.png";
 import { NavLink } from "@/components/NavLink";
 import { useAuth } from "@/contexts/AuthContext";
 import { isAdminRole, roleLabel } from "@/lib/roles";
@@ -95,15 +95,15 @@ export function AppSidebar() {
       {/* Brand */}
       <div className="flex items-center justify-center px-3 py-5 border-b border-sidebar-border/60 bg-sidebar-accent/20">
         {collapsed ? (
-          <img src={companyLogo} alt="LC" className="h-10 w-auto object-contain" />
+          <img src={companyLogo} alt="Cohere Aegis" className="h-10 w-auto object-contain" />
         ) : (
           <div className="flex items-center gap-3">
             <div className="h-11 w-11 rounded-lg bg-white border border-sidebar-border/40 flex items-center justify-center p-1 shadow-sm">
-              <img src={companyLogo} alt="LC" className="h-full w-auto object-contain" />
+              <img src={companyLogo} alt="Cohere Aegis" className="h-full w-auto object-contain" />
             </div>
             <div>
               <span className="text-[14px] font-display font-extrabold text-sidebar-accent-foreground tracking-tight leading-none">
-                Lemon Host Monitor
+                Cohere Aegis
               </span>
               <span className="block text-[10px] text-sidebar-muted font-medium tracking-[0.12em] uppercase mt-0.5">
                 Workforce OS

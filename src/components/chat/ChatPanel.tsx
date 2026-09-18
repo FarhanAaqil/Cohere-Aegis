@@ -18,7 +18,7 @@ export function ChatPanel({ onClose }: ChatPanelProps) {
     {
       id: "welcome",
       role: "assistant",
-      content: "Hi! I'm your Lemon Host Monitor Assistant. I answer from live attendance, timesheets, leave, and shifts — not dummy data. Try a quick action below.",
+      content: "Hi! I'm your Cohere Aegis Assistant. I answer from live attendance, timesheets, leave, and shifts — not dummy data. Try a quick action below.",
       timestamp: new Date(),
     },
   ]);
@@ -89,7 +89,7 @@ export function ChatPanel({ onClose }: ChatPanelProps) {
             <Bot className="h-4.5 w-4.5" />
           </div>
           <div>
-            <h3 className="text-sm font-semibold leading-tight">Lemon Host Monitor Assistant</h3>
+            <h3 className="text-sm font-semibold leading-tight">Cohere Aegis Assistant</h3>
             <p className="text-[11px] opacity-80 leading-tight">
               Live attendance, timesheets & more
             </p>

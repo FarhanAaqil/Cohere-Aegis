@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Lemon Host Monitor Extension",
-  "version": "1.2.1",
-  "description": "Employee monitoring extension for Lemon Host Monitor.",
+  "name": "Cohere Aegis Extension",
+  "version": "1.0.0",
+  "description": "Activity and attendance companion extension for Cohere Aegis.",
   "permissions": [
     "alarms",
     "storage",
@@ -18,7 +18,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Lemon Host Monitor Settings"
+    "default_title": "Cohere Aegis Settings"
   },
   "content_scripts": [
     {
@@ -35,8 +35,7 @@
   "externally_connectable": {
     "matches": [
       "http://localhost:8080/*",
-      "http://127.0.0.1:8080/*",
-      "https://farhan.careerjumpstart.com.au/*"
+      "http://127.0.0.1:8080/*"
     ]
   }
 }
