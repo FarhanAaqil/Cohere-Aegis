@@ -1,5 +1,8 @@
 export type UserRole = "EMPLOYEE" | "MANAGER" | "ADMIN" | "HR_MANAGER";
 
+export const ADMIN_ROLES: UserRole[] = ["ADMIN", "HR_MANAGER"];
+export const MANAGER_ROLES: UserRole[] = ["MANAGER", "ADMIN", "HR_MANAGER"];
+
 export function isAdminRole(role?: string | null): boolean {
   return role === "ADMIN" || role === "HR_MANAGER";
 }

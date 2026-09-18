@@ -31,6 +31,8 @@ import UserManualPage from "@/pages/UserManualPage";
 import AuditLogsPage from "@/pages/admin/AuditLogsPage";
 import IpConfigPage from "@/pages/admin/IpConfigPage";
 
+import { ADMIN_ROLES, MANAGER_ROLES, UserRole } from "@/lib/roles";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -40,8 +42,14 @@ const queryClient = new QueryClient({
   },
 });
 
-const ProtectedPage = ({ children }: { children: React.ReactNode }) => (
-  <ProtectedRoute>
+const ProtectedPage = ({
+  children,
+  allowedRoles,
+}: {
+  children: React.ReactNode;
+  allowedRoles?: UserRole[];
+}) => (
+  <ProtectedRoute allowedRoles={allowedRoles}>
     <AppLayout>{children}</AppLayout>
   </ProtectedRoute>
 );
@@ -60,23 +68,23 @@ const App = () => (
             <Route path="/timesheet" element={<ProtectedPage><TimesheetPage /></ProtectedPage>} />
             <Route path="/attendance" element={<ProtectedPage><AttendancePage /></ProtectedPage>} />
             <Route path="/leave" element={<ProtectedPage><LeaveRequestsPage /></ProtectedPage>} />
-            <Route path="/reports" element={<ProtectedPage><ReportsPage /></ProtectedPage>} />
+            <Route path="/reports" element={<ProtectedPage allowedRoles={MANAGER_ROLES}><ReportsPage /></ProtectedPage>} />
             <Route path="/policies" element={<ProtectedPage><PoliciesPage /></ProtectedPage>} />
             <Route path="/manual" element={<ProtectedPage><UserManualPage /></ProtectedPage>} />
             <Route path="/chats" element={<ProtectedPage><ChatsPage /></ProtectedPage>} />
             <Route path="/tasks" element={<ProtectedPage><TasksPage /></ProtectedPage>} />
-            <Route path="/team" element={<ProtectedPage><TeamPage /></ProtectedPage>} />
-            <Route path="/browser-history" element={<ProtectedPage><BrowserHistoryPage /></ProtectedPage>} />
-            <Route path="/screenshots" element={<ProtectedPage><ScreenshotsPage /></ProtectedPage>} />
-            <Route path="/admin" element={<ProtectedPage><AdminPage /></ProtectedPage>} />
-            <Route path="/admin/users" element={<ProtectedPage><AdminUsersPage /></ProtectedPage>} />
-            <Route path="/admin/teams" element={<ProtectedPage><AdminTeamsPage /></ProtectedPage>} />
-            <Route path="/admin/browser-history" element={<ProtectedPage><AdminBrowserHistoryPage /></ProtectedPage>} />
-            <Route path="/admin/shifts" element={<ProtectedPage><ShiftSchedulingPage /></ProtectedPage>} />
-            <Route path="/admin/departments" element={<ProtectedPage><DepartmentsPage /></ProtectedPage>} />
-            <Route path="/admin/analytics" element={<ProtectedPage><AnalyticsPage /></ProtectedPage>} />
-            <Route path="/admin/audit-logs" element={<ProtectedPage><AuditLogsPage /></ProtectedPage>} />
-            <Route path="/admin/ip-config" element={<ProtectedPage><IpConfigPage /></ProtectedPage>} />
+            <Route path="/team" element={<ProtectedPage allowedRoles={MANAGER_ROLES}><TeamPage /></ProtectedPage>} />
+            <Route path="/browser-history" element={<ProtectedPage allowedRoles={MANAGER_ROLES}><BrowserHistoryPage /></ProtectedPage>} />
+            <Route path="/screenshots" element={<ProtectedPage allowedRoles={MANAGER_ROLES}><ScreenshotsPage /></ProtectedPage>} />
+            <Route path="/admin" element={<ProtectedPage allowedRoles={ADMIN_ROLES}><AdminPage /></ProtectedPage>} />
+            <Route path="/admin/users" element={<ProtectedPage allowedRoles={ADMIN_ROLES}><AdminUsersPage /></ProtectedPage>} />
+            <Route path="/admin/teams" element={<ProtectedPage allowedRoles={ADMIN_ROLES}><AdminTeamsPage /></ProtectedPage>} />
+            <Route path="/admin/browser-history" element={<ProtectedPage allowedRoles={ADMIN_ROLES}><AdminBrowserHistoryPage /></ProtectedPage>} />
+            <Route path="/admin/shifts" element={<ProtectedPage allowedRoles={ADMIN_ROLES}><ShiftSchedulingPage /></ProtectedPage>} />
+            <Route path="/admin/departments" element={<ProtectedPage allowedRoles={ADMIN_ROLES}><DepartmentsPage /></ProtectedPage>} />
+            <Route path="/admin/analytics" element={<ProtectedPage allowedRoles={ADMIN_ROLES}><AnalyticsPage /></ProtectedPage>} />
+            <Route path="/admin/audit-logs" element={<ProtectedPage allowedRoles={ADMIN_ROLES}><AuditLogsPage /></ProtectedPage>} />
+            <Route path="/admin/ip-config" element={<ProtectedPage allowedRoles={ADMIN_ROLES}><IpConfigPage /></ProtectedPage>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
