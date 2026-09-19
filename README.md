@@ -12,9 +12,9 @@
 
 ## Screenshots & Preview
 
-| Command Center Dashboard | Login & Authentication |
+| Command Center Dashboard | Control Center & AI Assistant |
 | :---: | :---: |
-| ![Cohere Aegis Command Center Dashboard](docs/images/cohere-aegis-dashboard.png) | ![Cohere Aegis Login Interface](docs/images/cohere-aegis-login.png) |
+| ![Cohere Aegis Command Center Dashboard](docs/images/cohere-aegis-dashboard.png) | ![Cohere Aegis Control Center and Assistant](docs/images/cohere-aegis-assistant.png) |
 
 ---
 
