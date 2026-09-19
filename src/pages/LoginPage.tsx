@@ -56,8 +56,8 @@ const LoginPage = () => {
 
         <div className="relative z-10 text-center px-16 max-w-xl">
           <div className="mb-10 flex justify-center">
-            <div className="rounded-2xl bg-white/[0.08] backdrop-blur-md p-10 border border-white/[0.08] shadow-2xl">
-              <img src={companyLogo} alt="Cohere Aegis" className="h-44 w-auto object-contain brightness-0 invert" />
+            <div className="rounded-2xl bg-white/[0.06] backdrop-blur-md p-8 border border-white/[0.1] shadow-2xl">
+              <img src={companyLogo} alt="Cohere Aegis" className="h-40 w-auto object-contain drop-shadow-md" />
             </div>
           </div>
           <h1 className="text-4xl font-display font-extrabold text-white tracking-tight mb-3 leading-tight">
@@ -98,8 +98,8 @@ const LoginPage = () => {
         <div className="w-full max-w-[380px] animate-fade-in">
           {/* Mobile logo */}
           <div className="lg:hidden flex flex-col items-center mb-10">
-            <div className="rounded-2xl bg-muted/50 p-8 border border-border/60">
-              <img src={companyLogo} alt="Cohere Aegis" className="h-36 w-auto object-contain" />
+            <div className="rounded-2xl bg-muted/40 p-6 border border-border/60 shadow-sm">
+              <img src={companyLogo} alt="Cohere Aegis" className="h-24 w-auto object-contain" />
             </div>
             <h1 className="text-2xl font-display font-extrabold tracking-tight text-foreground mt-4">
               Cohere Aegis

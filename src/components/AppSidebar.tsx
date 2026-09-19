@@ -95,10 +95,10 @@ export function AppSidebar() {
       {/* Brand */}
       <div className="flex items-center justify-center px-3 py-5 border-b border-sidebar-border/60 bg-sidebar-accent/20">
         {collapsed ? (
-          <img src={companyLogo} alt="Cohere Aegis" className="h-10 w-auto object-contain" />
+          <img src={companyLogo} alt="Cohere Aegis" className="h-8 w-auto object-contain" />
         ) : (
           <div className="flex items-center gap-3">
-            <div className="h-11 w-11 rounded-lg bg-white border border-sidebar-border/40 flex items-center justify-center p-1 shadow-sm">
+            <div className="h-10 w-10 rounded-xl bg-card/90 border border-sidebar-border/60 flex items-center justify-center p-1.5 shadow-sm">
               <img src={companyLogo} alt="Cohere Aegis" className="h-full w-auto object-contain" />
             </div>
             <div>
